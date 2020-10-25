@@ -1,0 +1,99 @@
+<div class="sliders">
+  <div class="flex-1">
+    <div class="layer-view slider">
+      <div class="slider-name" (click)="toggleSlider($event)">
+        <small>Layer view</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <!-- <div class="feature" *ngFor="let vlFeature of viewLayerFeatures">
+          <app-layer-view-features
+            [feature]="vlFeature"
+          ></app-layer-view-features>
+        </div> -->
+        <div class="feature" *ngFor="let vlFeature of viewLayerFeatures">
+          <div class="feature-body">
+            <div class="feature-name">
+              <small>{{ vlFeature.name }}</small>
+            </div>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="0"
+                [max]="vlFeature.scale"
+                [value]="vlFeature.value"
+                (input)="updateValue(vlFeature.id, $event)"
+              />
+            </div>
+            <div class="displayField">
+              <div class="displayValue">
+                <small>{{ vlFeature.displayedValue }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="shading slider" (click)="toggleSlider($event)">
+      <div class="slider-name">
+        <small>Shading</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <div class="feature"></div>
+        <div class="feature"></div>
+        <div class="feature"></div>
+      </div>
+    </div>
+    <div class="header-1 slider">
+      <div class="slider-name" (click)="toggleSlider($event)">
+        <small>Header</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <div class="feature"></div>
+      </div>
+    </div>
+    <div class="header-2 slider">
+      <div class="slider-name" (click)="toggleSlider($event)">
+        <small>Header</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <div class="feature"></div>
+      </div>
+    </div>
+  </div>
+  <div class="flex-2">
+    <div class="water-depth slider">
+      <div class="slider-name" (click)="toggleSlider($event)">
+        <small>Water depth</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <div class="feature"></div>
+      </div>
+    </div>
+    <div class="elevation slider">
+      <div class="slider-name" (click)="toggleSlider($event)">
+        <small>Elevation</small>
+        <svg class="triangle">
+          <polygon points="0,7 4,12 8,7" />
+        </svg>
+      </div>
+      <div class="features">
+        <div class="feature"></div>
+      </div>
+    </div>
+  </div>
+</div>
